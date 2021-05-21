@@ -78,7 +78,7 @@ Now we can start all services
 ```bash
 docker-compose up
 ```
-We can access airflow UI using the link http://localhost:8080
+We can access airflow UI using the link http://localhost:5884
 
 ![image](https://user-images.githubusercontent.com/78525449/119169595-d3165080-ba7f-11eb-9bae-e6ce109d56a8.png)
 
@@ -105,7 +105,7 @@ Place copy_data.py script inside airflow/dag folder.  Once that is done run the 
 ![image](https://user-images.githubusercontent.com/78525449/119181146-d06f2780-ba8e-11eb-8931-402f70e238a3.png)
 
 
-##### Scripts Functionality:
+##### Airflow Script:
 The script created uses the source and target database connection and using the cursor fetches the data from one database and store it into another database.
 
 
