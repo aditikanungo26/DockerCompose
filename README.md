@@ -29,14 +29,14 @@ Follow below steps to install necessary tools:
 mkdir ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 ```
-- initialize airflow 
+- Initialize airflow 
 ```shell
 docker-compose up airflow-init
 ```
 
 ##### Postgres Database Setup
 
-- Add one more Postgres service configuration in the docker compose file (created 2 different postgres containers for this POC)
+- Add below Postgres service configurations in the docker compose file (created 2 different postgres containers for this POC)
 
 ```yaml
 postgres_source:
@@ -109,7 +109,7 @@ Place copy_data.py script inside airflow/dag folder.  Once that is done run the 
 The script created uses the source and target database connection and using the cursor fetches the data from one database and store it into another database.
 
 
-##### Steps to verify data into target database 
+#### Steps to verify data into target database 
 
 - Following command starts the web service and runs bash as its command.
 
@@ -125,8 +125,11 @@ docker-compose run postgres_target bash
 
 - Now we can see that data has been copied to target database
 
+Source Data:
+
 ![image](https://user-images.githubusercontent.com/78525449/119183178-5ab88b00-ba91-11eb-9bab-ec92e30ccf47.png)
 
+Target Data:
 
 ![image](https://user-images.githubusercontent.com/78525449/119181036-b6cde000-ba8e-11eb-8961-f35fb1910502.png)
 
